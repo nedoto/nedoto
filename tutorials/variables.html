@@ -1,0 +1,299 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Variables</title>
+    <meta name="description" content="Documentation for NEDOTO">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/assets/normalize.css?v=1718803898"
+        media="screen" />
+    <link rel="stylesheet" type="text/css" href="/assets/doctave-style.css?v=1718803898"
+        media="screen" />
+    <link rel="stylesheet" type="text/css" href="/assets/katex.css?v=1718803898" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/assets/prism-ghcolors.css?v=1718803898"
+        media="screen" />
+
+    <script>
+        var DOCTAVE_TIMESTAMP = "1718803898";
+        var BASE_PATH = "/";
+        var color = localStorage.getItem('doctave-color')
+
+        if (color === 'dark') {
+            document.getElementsByTagName('html')[0].classList.remove('light');
+            document.getElementsByTagName('html')[0].classList.add('dark');
+        } else {
+            document.getElementsByTagName('html')[0].classList.remove('dark');
+            document.getElementsByTagName('html')[0].classList.add('light');
+        }
+    </script>
+
+    
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P94RW5J2"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    
+</head>
+
+<body>
+    <label for='menu-toggle-switch' class='menu-toggle-button'>
+        ☰
+    </label>
+    <input type="checkbox" id="menu-toggle-switch" value='0' />
+    <div class='page'>
+        <div class='header'>
+            <div class='logo'>
+                
+                <a href="/">
+                    <img src="/assets/logo.png" alt='NEDOTO logo'></img>
+                </a>
+                
+                <h2 class='project-name'>
+                    <a href="/">
+                        NEDOTO
+                    </a>
+                </h2>
+            </div>
+            <div class='search'>
+                <form id='search-form'>
+    <input type='text' id='search-box' autocomplete="off" placeholder="Search..."></input>
+    <span class='search-icon'>S</span>
+    <ul id='search-results'></ul>
+</form>
+
+            </div>
+            <div class='header-dummy-right'>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='sidebar-left'>
+                <nav class='site-nav'>
+    <ul>
+        
+            <li><a href="/">Quick start</a></li>
+            
+        
+            <li><a href="/tutorials">The product</a></li>
+            
+                <ul>
+    
+        <li><a href="/tutorials/main-concepts">Main concepts</a></li>
+        
+    
+        <li><a href="/tutorials/dashboard">Dashboard</a></li>
+        
+    
+        <li><a href="/tutorials/projects">Projects</a></li>
+        
+    
+        <li><a href="/tutorials/environments">Environments</a></li>
+        
+    
+        <li><a class="active" href="/tutorials/variables">Variables</a></li>
+        
+    
+        <li><a href="/tutorials/assets">Assets</a></li>
+        
+    
+        <li><a href="/tutorials/api-keys">Api keys</a></li>
+        
+    
+</ul>
+
+            
+        
+            <li><a href="/developers">SDK</a></li>
+            
+                <ul>
+    
+        <li><a href="/developers/curl">cURL</a></li>
+        
+    
+        <li><a href="/developers/php-script">PHP</a></li>
+        
+    
+        <li><a href="/developers/laravel-client">Laravel package</a></li>
+        
+    
+        <li><a href="/developers/typescript-client">Typescript client</a></li>
+        
+    
+</ul>
+
+            
+        
+    </ul>
+    <span id='light-dark-mode-switch'>
+        <svg xmlns="http://www.w3.org/2000/svg" id="dark-mode-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" id="light-mode-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+        </svg>
+    </span>
+</nav>
+
+            </div>
+            <div class='doctave-content'>
+                <h1 id="variables">Variables</h1>
+<p>This section explain how to manage variables in <a href="https://app.nedoto.com">Nedoto.com</a>.</p>
+<h2 id="create-a-new-variable">Create a new variable</h2>
+<p>The first time you use Nedoto, you won't have any variable.</p>
+<p>To create a new variable, click on the purple "New variable" button at the top right.</p>
+<p><img src="/assets/tutorials/variables/var-create.png" alt="Create a new variable"></p>
+<p>In the variable creation form, fill in the mandatory fields identified by a red asterisk and press the button "Create,"
+or "Create &amp; create another" to create multiple variables without leaving the form.</p>
+<p><img src="/assets/tutorials/variables/var-create-1.png" alt="Fill mandatory fields"></p>
+<div class="callout warning"><p class="callout-title">💡 Variable slug</p>
+<p>The variable slug is automatically generated starting from the variable name and must be unique inside the same
+environment, otherwise you will receive an error.</p>
+</div><div class="callout info"><p class="callout-title">💡 Variable types</p>
+<p>At the moment we support these variable types:</p>
+<pre><code class="language-text">- string
+- integer
+- float
+- boolean
+- code (json, javascript, php, etc.)
+- html
+</code></pre>
+<p></p>
+</div>
+<p>If the variable creation is successful, you will be redirected to the environments list with the "Created" notification.</p>
+<p><img src="/assets/tutorials/variables/var-create-2.png" alt="Project list"></p>
+<h2 id="edit-the-variable">Edit the variable</h2>
+<p>To edit an variable, click on the pencil icon next to the variable name, and you will be redirected to the editing page.</p>
+<h2 id="delete-the-variable">Delete the variable</h2>
+<p>To delete an variable, click on the red trash can icon. A notification will prompt you to confirm. By
+pressing the red button, the variable will be deleted.</p>
+<p><img src="/assets/tutorials/variables/var-delete.png" alt="Delete an environment"></p>
+<h2 id="variable-history">Variable history</h2>
+<p>A variable can be created and modified multiple times.
+Sometimes errors can occur in this process, so in Nedoto, we've added a feature called "History" that allows you to view
+a log of changes and restore them with a single click.</p>
+<p>To view the history of changes to a variable, click on the highlighted button in the image below:</p>
+<p><img src="/assets/tutorials/variables/var-history.png" alt="Variable history"></p>
+<p>Here's how the history screen of a variable looks.<br>
+As you can see on the left, old values are listed, and on the right, you'll find the newly set values.</p>
+<p>By clicking the "Restore" button, you can revert to the old values shown on the left:</p>
+<p><img src="/assets/tutorials/variables/var-history-1.png" alt="Variable history details"></p>
+<h2 id="copy-variable-to-another-environment">Copy variable to another environment</h2>
+<p>Often, when you define a variable in the development or staging environment, you need to copy it, for example, to the
+production environment.</p>
+<p>This is just an example of how the "Copy to another environment" feature works.<br>
+This way, you don't need to manually create a new variable; instead, you can simply copy it with a click.</p>
+<p>Click on the highlighted button:</p>
+<p><img src="/assets/tutorials/variables/var-copy-to-env.png" alt="Copy variable to another environment"></p>
+<p>A modal will appear, prompting you to select the environment to which you want to copy the variable:</p>
+<p><img src="/assets/tutorials/variables/var-copy-to-env-1.png" alt="Select the environment where to copy the variable"></p>
+<h2 id="real-time-push">Real-time push</h2>
+<p>A variable can be retrieved with a simple API call, but sometimes you may need to <strong>push in real-time</strong> the value of
+your variables without the need for a deployment.</p>
+<p>Some examples include:</p>
+<ul>
+<li>Disabling a feature in real-time without a new deployment</li>
+<li>Changing an image in real-time without a new deployment</li>
+<li>Injecting JavaScript code into a smartphone application in real-time without a new deployment</li>
+<li>Sending a notification to all connected users in real-time</li>
+<li>Etc.</li>
+</ul>
+<p>To push the value of your variables in real-time, click on the highlighted button:</p>
+<p><img src="/assets/tutorials/variables/var-real-time-push.png" alt="Real-time variable push"></p>
+<p>A modal will appear, and by clicking the "Submit" green button, you will send the value of this variable to all your
+connected
+clients in real-time:</p>
+<p><img src="/assets/tutorials/variables/var-real-time-push-1.png" alt="Real-time variable push"></p>
+<p>You have to implement the client-side logic to receive the real-time pushed value or use one of Nedoto SDKs.</p>
+
+            </div>
+            <div class='sidebar-right'>
+                <div class='page-nav' id='page-nav'>
+                    <p class='page-nav-header'>On this page</p>
+                    <ul>
+                        
+                        <li class='page-nav-level-1'>
+                            <a href='#variables'>Variables</a>
+                        </li>
+                        
+                        <li class='page-nav-level-2'>
+                            <a href='#create-a-new-variable'>Create a new variable</a>
+                        </li>
+                        
+                        <li class='page-nav-level-2'>
+                            <a href='#edit-the-variable'>Edit the variable</a>
+                        </li>
+                        
+                        <li class='page-nav-level-2'>
+                            <a href='#delete-the-variable'>Delete the variable</a>
+                        </li>
+                        
+                        <li class='page-nav-level-2'>
+                            <a href='#variable-history'>Variable history</a>
+                        </li>
+                        
+                        <li class='page-nav-level-2'>
+                            <a href='#copy-variable-to-another-environment'>Copy variable to another environment</a>
+                        </li>
+                        
+                        <li class='page-nav-level-2'>
+                            <a href='#real-time-push'>Real-time push</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class='wave-container'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill-opacity="0.35"
+                        d="M0,192L60,213.3C120,235,240,277,360,277.3C480,277,600,235,720,192C840,149,960,107,1080,122.7C1200,139,1320,213,1380,250.7L1440,288L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                    </path>
+                    <path fill-opacity="0.5"
+                        d="M0,160L60,181.3C120,203,240,245,360,229.3C480,213,600,139,720,138.7C840,139,960,213,1080,229.3C1200,245,1320,203,1380,181.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                    </path>
+                    <path fill-opacity="0.2"
+                        d="M0,224L60,197.3C120,171,240,117,360,117.3C480,117,600,171,720,186.7C840,203,960,181,1080,186.7C1200,192,1320,224,1380,240L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                    </path>
+                </svg>
+                <p>Powered by <a href='https://cli.doctave.com' target='_blank'>Doctave</a></p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/assets/katex.js?v=1718803898"></script>
+    <script type="text/javascript" src="/assets/mermaid.js?v=1718803898"></script>
+    <script type="text/javascript" src="/assets/elasticlunr.js?v=1718803898"></script>
+    <script type="text/javascript" src="/assets/prism.js?v=1718803898"></script>
+    <script type="text/javascript" src="/assets/doctave-app.js?v=1718803898"></script>
+
+    
+    <script type='text/javascript' src="/assets/livereload.js?port=35729" async="" defer=""></script>
+
+    <script>
+        // Don't reset scrolling on livereload
+        window.addEventListener('scroll', function () {
+            localStorage.setItem('doctave-scrollPosition', window.scrollY);
+
+            dragRightMenu();
+        }, false);
+
+        window.addEventListener('load', function () {
+            if (localStorage.getItem('doctave-scrollPosition') !== null)
+                window.scrollTo(0, localStorage.getItem('doctave-scrollPosition'));
+
+            document.getElementById('menu-toggle-switch').addEventListener('change', function (e) {
+                disableScrollifMenuOpen();
+            });
+        }, false);
+    </script>
+    
+</body>
+
+</html>

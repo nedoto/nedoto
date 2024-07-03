@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>NEDOTO</title>
+    <title>Api keys</title>
     <meta name="description" content="Documentation for NEDOTO">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -93,29 +93,34 @@
 
             </div>
             <div class='doctave-content'>
-                <h1 id="quick-start">Quick start</h1>
-<p>Welcome to Nedoto, the remote and real-time configuration service.</p>
-<p>To get started in 5 minutes, follow these steps:</p>
-<h2 id="sign-up">Sign up</h2>
-<p>Sign up for a free account at <a href="https://app.nedoto.com">nedoto.com</a>.</p>
-<h2 id="configure-your-project">Configure your project</h2>
-<p>Create a new <a href="https://app.nedoto.com/projects">project</a>, <a href="https://app.nedoto.com/environments">environment</a>,
-and <a href="https://app.nedoto.com/configurations">configuration</a> in the Nedoto dashboard.</p>
-<h2 id="retrieve-your-configuration">Retrieve your configuration</h2>
-<p>Use one of the following methods to retrieve your configuration:</p>
-<h3 id="developer-sdk">Developer SDK</h3>
-<p>If you are a developer you can retrieve your configuration with different SDKs for PHP and Javascript or Typescript: take a look <a href="/developers">here</a>.</p>
-<h3 id="curl">cURL</h3>
-<p>If you want to retrieve your configuration with cURL, use the following command:</p>
-<pre><code class="language-bash">curl --location 'https://app.nedoto.com/api/get/&lt;your configuration slug&gt;' \
---header 'X-Api-Key: &lt;your api key&gt;'
-</code></pre>
-<h3 id="nedoto-cli">Nedoto-cli</h3>
-<p>We create a small CLI command to test the retrieval of your configuration.<br>
-Go to <a href="https://github.com/nedoto/nedoto-cli">https://github.com/nedoto/nedoto-cli</a> and clone the CLI command.</p>
-<p>Enter the <strong>nedoto-cli</strong> directory and type:</p>
-<pre><code class="language-bash">$ bash nedoto-cli.bash
-</code></pre>
+                <h1 id="api-keys">Api keys</h1>
+<p>This section explain how to manage the api keys in <a href="https://app.nedoto.com">Nedoto.com</a>.</p>
+<h2 id="create-a-new-api-key">Create a new api key</h2>
+<p>To create a new api key, click on the purple "New api key" button at the top right.</p>
+<div class="callout info"><p class="callout-title">💡 Info</p>
+<p>Api keys are automatically created each time a new environment is created.</p>
+<p>You can create as many API keys as you want.</p>
+</div>
+<p><img src="/assets/tutorials/api-keys/api-key-create.png" alt="Create a new api key"></p>
+<p>In the api key creation form, fill in the mandatory fields identified by a red asterisk and press the button "Create,"
+or "Create &amp; create another" to create multiple api keys without leaving the form.</p>
+<p><img src="/assets/tutorials/api-keys/api-key-create-1.png" alt="Fill mandatory fields"></p>
+<p>If the project creation is successful, you will be redirected to the projects list with the "Created" notification.</p>
+<p><img src="/assets/tutorials/api-keys/api-key-create-2.png" alt="Api key list"></p>
+<h2 id="edit-the-api-key">Edit the api key</h2>
+<p>To edit an api key, click on the pencil icon next to the api key name, and you will be redirected to the editing page.</p>
+<h2 id="delete-the-api-key">Delete the api key</h2>
+<p>To delete an api key, click on the red trash can icon. A notification will prompt you to confirm. By pressing the red
+button, the api key will be deleted.</p>
+<div class="callout warning"><p class="callout-title">💡 Info</p>
+<p>You cannot delete API keys that are associated with an environment.</p>
+<p>API keys are deleted when an environment is removed.</p>
+<p>Disable your API keys when you no longer need to use them or to deny access.</p>
+</div>
+<p><img src="/assets/tutorials/api-keys/api-key-delete.png" alt="Delete an api key"></p>
+<h2 id="copy-the-api-key-value">Copy the api key value</h2>
+<p>To copy the value of the API keys, click on the copy icon next to the value of the API key found on each row.</p>
+<p><img src="/assets/tutorials/api-keys/api-key-copy-value.png" alt="Copy the api key value"></p>
 
             </div>
             <div class='sidebar-right'>
@@ -124,31 +129,23 @@ Go to <a href="https://github.com/nedoto/nedoto-cli">https://github.com/nedoto/n
                     <ul>
                         
                         <li class='page-nav-level-1'>
-                            <a href='#quick-start'>Quick start</a>
+                            <a href='#api-keys'>Api keys</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#sign-up'>Sign up</a>
+                            <a href='#create-a-new-api-key'>Create a new api key</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#configure-your-project'>Configure your project</a>
+                            <a href='#edit-the-api-key'>Edit the api key</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#retrieve-your-configuration'>Retrieve your configuration</a>
+                            <a href='#delete-the-api-key'>Delete the api key</a>
                         </li>
                         
-                        <li class='page-nav-level-3'>
-                            <a href='#developer-sdk'>Developer SDK</a>
-                        </li>
-                        
-                        <li class='page-nav-level-3'>
-                            <a href='#curl'>cURL</a>
-                        </li>
-                        
-                        <li class='page-nav-level-3'>
-                            <a href='#nedoto-cli'>Nedoto-cli</a>
+                        <li class='page-nav-level-2'>
+                            <a href='#copy-the-api-key-value'>Copy the api key value</a>
                         </li>
                         
                     </ul>

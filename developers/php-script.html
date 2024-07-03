@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>NEDOTO</title>
+    <title>PHP</title>
     <meta name="description" content="Documentation for NEDOTO">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -93,30 +93,59 @@
 
             </div>
             <div class='doctave-content'>
-                <h1 id="quick-start">Quick start</h1>
-<p>Welcome to Nedoto, the remote and real-time configuration service.</p>
-<p>To get started in 5 minutes, follow these steps:</p>
-<h2 id="sign-up">Sign up</h2>
-<p>Sign up for a free account at <a href="https://app.nedoto.com">nedoto.com</a>.</p>
-<h2 id="configure-your-project">Configure your project</h2>
-<p>Create a new <a href="https://app.nedoto.com/projects">project</a>, <a href="https://app.nedoto.com/environments">environment</a>,
-and <a href="https://app.nedoto.com/configurations">configuration</a> in the Nedoto dashboard.</p>
-<h2 id="retrieve-your-configuration">Retrieve your configuration</h2>
-<p>Use one of the following methods to retrieve your configuration:</p>
-<h3 id="developer-sdk">Developer SDK</h3>
-<p>If you are a developer you can retrieve your configuration with different SDKs for PHP and Javascript or Typescript: take a look <a href="/developers">here</a>.</p>
-<h3 id="curl">cURL</h3>
-<p>If you want to retrieve your configuration with cURL, use the following command:</p>
-<pre><code class="language-bash">curl --location 'https://app.nedoto.com/api/get/&lt;your configuration slug&gt;' \
---header 'X-Api-Key: &lt;your api key&gt;'
-</code></pre>
-<h3 id="nedoto-cli">Nedoto-cli</h3>
-<p>We create a small CLI command to test the retrieval of your configuration.<br>
-Go to <a href="https://github.com/nedoto/nedoto-cli">https://github.com/nedoto/nedoto-cli</a> and clone the CLI command.</p>
-<p>Enter the <strong>nedoto-cli</strong> directory and type:</p>
-<pre><code class="language-bash">$ bash nedoto-cli.bash
-</code></pre>
+                <h1 id="php">PHP</h1>
+<p>Sometimes you need to create a simple PHP script, or you simply don't want to use a framework or library to help you
+with HTTP calls.</p>
+<p>If this fits your needs, keep reading.</p>
+<h2 id="request">Request</h2>
+<p>This simple PHP script shows how to use cURL to retrieve the value of a configuration from Nedoto via API:</p>
+<pre><code class="language-php">&lt;?php
 
+$curl = curl_init();
+
+$configName = 'example-var-name';
+$piaKey = 'example-api-key';
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL =&gt; 'https://app.nedoto.com/api/get/'.$configName,
+  CURLOPT_RETURNTRANSFER =&gt; true,
+  CURLOPT_ENCODING =&gt; '',
+  CURLOPT_MAXREDIRS =&gt; 10,
+  CURLOPT_TIMEOUT =&gt; 0,
+  CURLOPT_FOLLOWLOCATION =&gt; true,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; 'GET',
+  CURLOPT_HTTPHEADER =&gt; array(
+    'X-Api-Key: '.$apiKey
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+
+echo $response;
+
+</code></pre>
+<p>Replace <code>$configName</code> with the slug of your <a href="https://app.nedoto.com/configurations">configuration</a> and <code>$piaKey</code>
+with the value of your <a href="https://app.nedoto.com/api-keys">API key</a> associated with the same environment as the configuration.</p>
+<h2 id="response">Response</h2>
+<p>This is an example of the response that the call above might return:</p>
+<pre><code class="language-JSON">{
+  "configuration": {
+    "data": {
+      "slug": "banner-configuration",
+      "type": "code",
+      "value": "{\"configuration-slug\":\"configuration value defined in app.nedoto.com\"}",
+      "created_at": "2024-04-21T20:25:30+00:00",
+      "updated_at": "2024-04-21T20:25:30+00:00"
+    }
+  }
+}
+</code></pre>
+<div class="callout info"><p class="callout-title">💡 Info</p>
+<p>In this case, the response contains a configuration of type <code>code</code>, and its value is a simple JSON.</p>
+</div>
             </div>
             <div class='sidebar-right'>
                 <div class='page-nav' id='page-nav'>
@@ -124,31 +153,15 @@ Go to <a href="https://github.com/nedoto/nedoto-cli">https://github.com/nedoto/n
                     <ul>
                         
                         <li class='page-nav-level-1'>
-                            <a href='#quick-start'>Quick start</a>
+                            <a href='#php'>PHP</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#sign-up'>Sign up</a>
+                            <a href='#request'>Request</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#configure-your-project'>Configure your project</a>
-                        </li>
-                        
-                        <li class='page-nav-level-2'>
-                            <a href='#retrieve-your-configuration'>Retrieve your configuration</a>
-                        </li>
-                        
-                        <li class='page-nav-level-3'>
-                            <a href='#developer-sdk'>Developer SDK</a>
-                        </li>
-                        
-                        <li class='page-nav-level-3'>
-                            <a href='#curl'>cURL</a>
-                        </li>
-                        
-                        <li class='page-nav-level-3'>
-                            <a href='#nedoto-cli'>Nedoto-cli</a>
+                            <a href='#response'>Response</a>
                         </li>
                         
                     </ul>

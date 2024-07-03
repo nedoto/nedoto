@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>NEDOTO</title>
+    <title>Main concepts</title>
     <meta name="description" content="Documentation for NEDOTO">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -93,29 +93,64 @@
 
             </div>
             <div class='doctave-content'>
-                <h1 id="quick-start">Quick start</h1>
-<p>Welcome to Nedoto, the remote and real-time configuration service.</p>
-<p>To get started in 5 minutes, follow these steps:</p>
-<h2 id="sign-up">Sign up</h2>
-<p>Sign up for a free account at <a href="https://app.nedoto.com">nedoto.com</a>.</p>
-<h2 id="configure-your-project">Configure your project</h2>
-<p>Create a new <a href="https://app.nedoto.com/projects">project</a>, <a href="https://app.nedoto.com/environments">environment</a>,
-and <a href="https://app.nedoto.com/configurations">configuration</a> in the Nedoto dashboard.</p>
-<h2 id="retrieve-your-configuration">Retrieve your configuration</h2>
-<p>Use one of the following methods to retrieve your configuration:</p>
-<h3 id="developer-sdk">Developer SDK</h3>
-<p>If you are a developer you can retrieve your configuration with different SDKs for PHP and Javascript or Typescript: take a look <a href="/developers">here</a>.</p>
-<h3 id="curl">cURL</h3>
-<p>If you want to retrieve your configuration with cURL, use the following command:</p>
-<pre><code class="language-bash">curl --location 'https://app.nedoto.com/api/get/&lt;your configuration slug&gt;' \
---header 'X-Api-Key: &lt;your api key&gt;'
+                <h1 id="main-concepts">Main concepts</h1>
+<p>In this section you'll learn the main concepts in Nedoto.</p>
+<h2 id="projects">Projects</h2>
+<p>Projects are the starting point of Nedoto.<br>
+A project represent your product, your application or your website. Give to the project your product name to be simply
+identifiable.</p>
+<p>A project can be enabled or disabled.<br>
+Disabling a project will switch off all the environments, configurations and assets in it, so be careful when disabling a
+project that is currently used in production because it can have a huge impact on your product.</p>
+<h2 id="environments">Environments</h2>
+<p>Use the environments to group your configurations or assets for different scenarios, usually a good practice is to have three
+different environments like: development, staging, production - but you can create as many environment as you need with
+of course the names you wish.</p>
+<p>Each environment belongs to a project.</p>
+<p>Like the projects an environment can be enabled or disabled and this will affect the delivery of your configuration and
+assets - so pay attention when disabling an environment that is already in production.</p>
+<h2 id="configurations">Configurations</h2>
+<p>Configurations are Nedoto's core.</p>
+<p>With the configurations you can simply store a single string, JSON or even HTML and retrieve or push in real-time to your
+application or website or where ever you need.
+Each configuration has a unique name for each environment to avoid naming collision.</p>
+<p>You can choose different type of configurations supported at the moment:</p>
+<pre><code class="language-text">- string
+- integer
+- float
+- boolean
+- code (js, php, etc. or even json)
+- html
 </code></pre>
-<h3 id="nedoto-cli">Nedoto-cli</h3>
-<p>We create a small CLI command to test the retrieval of your configuration.<br>
-Go to <a href="https://github.com/nedoto/nedoto-cli">https://github.com/nedoto/nedoto-cli</a> and clone the CLI command.</p>
-<p>Enter the <strong>nedoto-cli</strong> directory and type:</p>
-<pre><code class="language-bash">$ bash nedoto-cli.bash
+<h2 id="assets">Assets</h2>
+<p>With the assets you can store any kind of document or image you need, these <code>mime-types</code> are currently supported:</p>
+<pre><code class="language-text">- text/csv
+- application/msword
+- application/vnd.openxmlformats-officedocument.wordprocessingml.document
+- image/gif
+- image/gif
+- text/calendar
+- image/jpeg
+- application/json
+- application/ld+json
+- image/png
+- image/webp
+- application/pdf
+- text/plain
+- application/vnd.ms-excel
+- application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+- application/xml
+- text/xml
+- application/zip
+- image/svg+xml
 </code></pre>
+<p>You can choose to deliver your assets via a simple URL or reference them inside your configurations, for
+example inside a JSON, code or even HTML.</p>
+<h2 id="api-keys">Api keys</h2>
+<p>Api keys are used to retrieve your configurations or assets from your code.
+Api keys must be included in each request inside the <code>X-Api-Key</code> HTTP request key.</p>
+<p>You can create as many api keys as you need for each environment to let different applications use the same configurations.
+Each api key can be enabled or disabled independently to give you the opportunity to allow or disallow certain clients.</p>
 
             </div>
             <div class='sidebar-right'>
@@ -124,31 +159,27 @@ Go to <a href="https://github.com/nedoto/nedoto-cli">https://github.com/nedoto/n
                     <ul>
                         
                         <li class='page-nav-level-1'>
-                            <a href='#quick-start'>Quick start</a>
+                            <a href='#main-concepts'>Main concepts</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#sign-up'>Sign up</a>
+                            <a href='#projects'>Projects</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#configure-your-project'>Configure your project</a>
+                            <a href='#environments'>Environments</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#retrieve-your-configuration'>Retrieve your configuration</a>
+                            <a href='#configurations'>Configurations</a>
                         </li>
                         
-                        <li class='page-nav-level-3'>
-                            <a href='#developer-sdk'>Developer SDK</a>
+                        <li class='page-nav-level-2'>
+                            <a href='#assets'>Assets</a>
                         </li>
                         
-                        <li class='page-nav-level-3'>
-                            <a href='#curl'>cURL</a>
-                        </li>
-                        
-                        <li class='page-nav-level-3'>
-                            <a href='#nedoto-cli'>Nedoto-cli</a>
+                        <li class='page-nav-level-2'>
+                            <a href='#api-keys'>Api keys</a>
                         </li>
                         
                     </ul>

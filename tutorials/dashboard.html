@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>NEDOTO</title>
+    <title>Dashboard</title>
     <meta name="description" content="Documentation for NEDOTO">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -93,29 +93,38 @@
 
             </div>
             <div class='doctave-content'>
-                <h1 id="quick-start">Quick start</h1>
-<p>Welcome to Nedoto, the remote and real-time configuration service.</p>
-<p>To get started in 5 minutes, follow these steps:</p>
-<h2 id="sign-up">Sign up</h2>
-<p>Sign up for a free account at <a href="https://app.nedoto.com">nedoto.com</a>.</p>
-<h2 id="configure-your-project">Configure your project</h2>
-<p>Create a new <a href="https://app.nedoto.com/projects">project</a>, <a href="https://app.nedoto.com/environments">environment</a>,
-and <a href="https://app.nedoto.com/configurations">configuration</a> in the Nedoto dashboard.</p>
-<h2 id="retrieve-your-configuration">Retrieve your configuration</h2>
-<p>Use one of the following methods to retrieve your configuration:</p>
-<h3 id="developer-sdk">Developer SDK</h3>
-<p>If you are a developer you can retrieve your configuration with different SDKs for PHP and Javascript or Typescript: take a look <a href="/developers">here</a>.</p>
-<h3 id="curl">cURL</h3>
-<p>If you want to retrieve your configuration with cURL, use the following command:</p>
-<pre><code class="language-bash">curl --location 'https://app.nedoto.com/api/get/&lt;your configuration slug&gt;' \
---header 'X-Api-Key: &lt;your api key&gt;'
-</code></pre>
-<h3 id="nedoto-cli">Nedoto-cli</h3>
-<p>We create a small CLI command to test the retrieval of your configuration.<br>
-Go to <a href="https://github.com/nedoto/nedoto-cli">https://github.com/nedoto/nedoto-cli</a> and clone the CLI command.</p>
-<p>Enter the <strong>nedoto-cli</strong> directory and type:</p>
-<pre><code class="language-bash">$ bash nedoto-cli.bash
-</code></pre>
+                <h1 id="dashboard">Dashboard</h1>
+<p>The Nedoto dashboard is where you find useful information regarding the usage of your account.</p>
+<h2 id="global-search">Global search</h2>
+<p>Nedoto offers an intelligent feature called global search.</p>
+<p>With global search, you can search across projects, environments, configurations, and assets in a single accessible point
+throughout Nedoto.</p>
+<p><img src="/assets/tutorials/dashboard/global-search.gif" alt="Global search"></p>
+<h2 id="api-call-left">API call left</h2>
+<p>This widget shows the total number of API calls that are still available to you.</p>
+<div class="callout info"><p class="callout-title">💡 Info</p>
+<p>The number of API calls varies by subscription plan.</p>
+<p>The image below shows the total number in the free plan.</p>
+</div>
+<p><img src="/assets/tutorials/dashboard/api-calls-left.png" alt="Api calls left widget"></p>
+<h2 id="real-time-push-left">Real-time push left</h2>
+<p>This widget displays the number of remaining real-time pushes for your configurations.</p>
+<div class="callout info"><p class="callout-title">💡 Info</p>
+<p>Each subscription plan has a different number of available real-time pushes.</p>
+<p>The image below shows the total number in the free plan.</p>
+</div>
+<p><img src="/assets/tutorials/dashboard/real-time-push-left.png" alt="Api calls left widget"></p>
+<h2 id="disk-space-left">Disk space left</h2>
+<p>This widget shows the available space for your assets.</p>
+<div class="callout info"><p class="callout-title">💡 Info</p>
+<p>Each subscription plan has a different amount of space available.</p>
+<p>The image below shows the total amount in the free plan.</p>
+</div>
+<p><img src="/assets/tutorials/dashboard/disk-space-left.png" alt="Api calls left widget"></p>
+<h2 id="api-calls-this-month">API calls this month</h2>
+<p>This line chart shows the distribution of the API calls for each day of the current month.</p>
+<p>It's very useful for seeing the requests that your application, website, or other services make to Nedoto.</p>
+<p><img src="/assets/tutorials/dashboard/api-calls-this-month.png" alt="Api calls left widget"></p>
 
             </div>
             <div class='sidebar-right'>
@@ -124,31 +133,27 @@ Go to <a href="https://github.com/nedoto/nedoto-cli">https://github.com/nedoto/n
                     <ul>
                         
                         <li class='page-nav-level-1'>
-                            <a href='#quick-start'>Quick start</a>
+                            <a href='#dashboard'>Dashboard</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#sign-up'>Sign up</a>
+                            <a href='#global-search'>Global search</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#configure-your-project'>Configure your project</a>
+                            <a href='#api-call-left'>API call left</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#retrieve-your-configuration'>Retrieve your configuration</a>
+                            <a href='#real-time-push-left'>Real-time push left</a>
                         </li>
                         
-                        <li class='page-nav-level-3'>
-                            <a href='#developer-sdk'>Developer SDK</a>
+                        <li class='page-nav-level-2'>
+                            <a href='#disk-space-left'>Disk space left</a>
                         </li>
                         
-                        <li class='page-nav-level-3'>
-                            <a href='#curl'>cURL</a>
-                        </li>
-                        
-                        <li class='page-nav-level-3'>
-                            <a href='#nedoto-cli'>Nedoto-cli</a>
+                        <li class='page-nav-level-2'>
+                            <a href='#api-calls-this-month'>API calls this month</a>
                         </li>
                         
                     </ul>

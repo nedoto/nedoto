@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>NEDOTO</title>
+    <title>Projects</title>
     <meta name="description" content="Documentation for NEDOTO">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -93,29 +93,38 @@
 
             </div>
             <div class='doctave-content'>
-                <h1 id="quick-start">Quick start</h1>
-<p>Welcome to Nedoto, the remote and real-time configuration service.</p>
-<p>To get started in 5 minutes, follow these steps:</p>
-<h2 id="sign-up">Sign up</h2>
-<p>Sign up for a free account at <a href="https://app.nedoto.com">nedoto.com</a>.</p>
-<h2 id="configure-your-project">Configure your project</h2>
-<p>Create a new <a href="https://app.nedoto.com/projects">project</a>, <a href="https://app.nedoto.com/environments">environment</a>,
-and <a href="https://app.nedoto.com/configurations">configuration</a> in the Nedoto dashboard.</p>
-<h2 id="retrieve-your-configuration">Retrieve your configuration</h2>
-<p>Use one of the following methods to retrieve your configuration:</p>
-<h3 id="developer-sdk">Developer SDK</h3>
-<p>If you are a developer you can retrieve your configuration with different SDKs for PHP and Javascript or Typescript: take a look <a href="/developers">here</a>.</p>
-<h3 id="curl">cURL</h3>
-<p>If you want to retrieve your configuration with cURL, use the following command:</p>
-<pre><code class="language-bash">curl --location 'https://app.nedoto.com/api/get/&lt;your configuration slug&gt;' \
---header 'X-Api-Key: &lt;your api key&gt;'
-</code></pre>
-<h3 id="nedoto-cli">Nedoto-cli</h3>
-<p>We create a small CLI command to test the retrieval of your configuration.<br>
-Go to <a href="https://github.com/nedoto/nedoto-cli">https://github.com/nedoto/nedoto-cli</a> and clone the CLI command.</p>
-<p>Enter the <strong>nedoto-cli</strong> directory and type:</p>
-<pre><code class="language-bash">$ bash nedoto-cli.bash
-</code></pre>
+                <h1 id="projects">Projects</h1>
+<p>This section explain how to manage projects in <a href="https://app.nedoto.com">Nedoto.com</a>.</p>
+<h2 id="create-a-new-project">Create a new project</h2>
+<p>The first time you use Nedoto, you won't have any projects.</p>
+<p>To create a new project, click on the purple "New project" button at the top right.</p>
+<p><img src="/assets/tutorials/project/project-create.png" alt="Create the new project"></p>
+<p>In the project creation form, fill in the mandatory fields identified by a red asterisk and press the button "Create,"
+or "Create &amp; create another" to create multiple projects without leaving the form.</p>
+<p><img src="/assets/tutorials/project/project-create-1.png" alt="Fill mandatory fields"></p>
+<p>If the project creation is successful, you will be redirected to the projects list with the "Created" notification.</p>
+<p><img src="/assets/tutorials/project/project-create-2.png" alt="Project list"></p>
+<h2 id="edit-the-project">Edit the project</h2>
+<p>To edit a project, click on the pencil icon next to the project name, and you will be redirected to the editing page.</p>
+<h2 id="delete-the-project">Delete the project</h2>
+<p>To delete a project, click on the red trash can icon. A notification will prompt you to confirm. By
+pressing the red button, the project will be deleted.</p>
+<p><img src="/assets/tutorials/project/project-delete.png" alt="Delete a project">
+<em>Delete a project</em></p>
+<hr>
+<div class="callout info"><p class="callout-title">Info</p>
+<p>
+To prevent unpleasant surprises, you cannot delete a project that contains active or inactive environments.
+</p>
+</div>
+<p>If you attempt to delete such projects, don't worry, nothing will happen, but instead, you will be shown a
+notification as depicted in the image below.</p>
+<p><img src="/assets/tutorials/project/project-delete-1.png" alt="Cannot delete a project"></p>
+<h2 id="quick-access-to-the-environments">Quick access to the environments</h2>
+<p>To quickly access a project's environments, click on the highlighted icon in the image below.
+<img src="/assets/tutorials/project/project-access-to-envs.png" alt="Quick access to the environments"></p>
+<p>You will be redirected to the list of environments filtered by the chosen project, as shown in the image below.</p>
+<p><img src="/assets/tutorials/project/project-access-to-envs-1.png" alt="Quick access to the environments"></p>
 
             </div>
             <div class='sidebar-right'>
@@ -124,31 +133,23 @@ Go to <a href="https://github.com/nedoto/nedoto-cli">https://github.com/nedoto/n
                     <ul>
                         
                         <li class='page-nav-level-1'>
-                            <a href='#quick-start'>Quick start</a>
+                            <a href='#projects'>Projects</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#sign-up'>Sign up</a>
+                            <a href='#create-a-new-project'>Create a new project</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#configure-your-project'>Configure your project</a>
+                            <a href='#edit-the-project'>Edit the project</a>
                         </li>
                         
                         <li class='page-nav-level-2'>
-                            <a href='#retrieve-your-configuration'>Retrieve your configuration</a>
+                            <a href='#delete-the-project'>Delete the project</a>
                         </li>
                         
-                        <li class='page-nav-level-3'>
-                            <a href='#developer-sdk'>Developer SDK</a>
-                        </li>
-                        
-                        <li class='page-nav-level-3'>
-                            <a href='#curl'>cURL</a>
-                        </li>
-                        
-                        <li class='page-nav-level-3'>
-                            <a href='#nedoto-cli'>Nedoto-cli</a>
+                        <li class='page-nav-level-2'>
+                            <a href='#quick-access-to-the-environments'>Quick access to the environments</a>
                         </li>
                         
                     </ul>
